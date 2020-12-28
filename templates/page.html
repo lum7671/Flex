@@ -4,9 +4,9 @@
 {{ super() }}
 
 {% if page.translations -%}
-<link rel="alternate" href="{{ SITEURL }}/{{ page.url }}" hreflang="{{ page.lang }}" />
+<link rel="alternate" href="{{ SITEURL }}/{{ page.url }}" hreflang="{{ page.lang }}" async />
 {% for p in page.translations %}
-<link rel="alternate" href="{{ SITEURL }}/{{ p.url }}" hreflang="{{ p.lang }}" />
+<link rel="alternate" href="{{ SITEURL }}/{{ p.url }}" hreflang="{{ p.lang }}"  async />
 {% endfor %}
 {% endif %}
 {% endblock %}

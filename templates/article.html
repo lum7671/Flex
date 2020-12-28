@@ -6,9 +6,9 @@
 <meta name="keywords" content="{{ article.tags|join(', ')|escape }}">
 
 {% if article.translations -%}
-<link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}" />
+<link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}" async />
 {% for a in article.translations %}
-<link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}" />
+<link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}" async />
 {% endfor %}
 {% endif %}
 
@@ -37,11 +37,11 @@
   </header>
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async ></script>
     <ins class="adsbygoogle ads-responsive"
          data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
          data-ad-slot="{{ GOOGLE_ADSENSE.ads.article_top }}"></ins>
-    <script>
+    <script async >
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   {% endif %}
@@ -84,11 +84,11 @@
   {% endif %}
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_bottom %}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
     <ins class="adsbygoogle ads-responsive"
          data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
          data-ad-slot="{{ GOOGLE_ADSENSE.ads.article_bottom }}"></ins>
-    <script>
+    <script async>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   {% endif %}
